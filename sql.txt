@@ -1,0 +1,20 @@
+Users,
+username,password, enabled (username)
+create table users (username varchar(20), password varchar(100), enabled boolean)
+insert into users values ('user4','$2a$16$9EMHOnjRPNiW8IcZHgetoO.zf1RtP3Rk5lMIUBqp1/sZKk8VHuNQi',true);
+insert into users values ('user5','$2a$16$x25InDTRQc7dIT6rrAJZMOe4qfRIjuwx0rItjIwhOeiXt2VWJE1v2',true);
+insert into users values ('user6','pass6',true);
+
+Roles
+username,role (+)
+create table roles (username varchar(20), role varchar(20));
+insert into roles values ('user4','ROLE_adm');
+insert into roles values ('user5','ROLE_usr');
+insert into roles values ('user6','ROLE_adm');
+insert into roles values ('user6','ROLE_usr');
+
+usersByUsernameQuery(query)
+select username,password,enabled from users where username=?
+select username, role from roles  where username=?
+
+

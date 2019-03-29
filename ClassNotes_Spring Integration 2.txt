@@ -1,0 +1,233 @@
+C:\Users\Admin\Documents\GitHub\spring_integration_part2
+
+
+https://start.spring.io/
+
+http://localhost:8081/h2-console/login.do?jsessionid=192f5645d36bc5fdf86e4f8cfc6a21ab
+
+https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+
+Ribbon : load balancer
+Eureka  : service registory and discovery : bind and lookup : defauld port 8761
+
+https://reqres.in/
+
+
+1. feign client :  Day3.demo1.MyService
+2. Hystrix : circuit breaker
+3. Zuul : API gateway
+4. Eureka : service registory : and discovery
+5. Ribbon: Client side load balancing
+
+===================================== DAY-4 ==================================================
+
+Day4.demo1.websecurity
+
+index.html
+
+web.xml -> sun -> Role Based Security - > 1. authentication  login, pass (pass is valid)
+
+	| -> role mapping 
+
+        |->	ACL access control list
+
+	authorization
+
+
+security manager 
+security provider
+
+
+Using generated security password: e94bc60a-f7d9-469e-beba-855e34e71455
+
+admin/*
+
+-> adm(Role called adm)
+-> usr(Role called usr
+
+
+user1,pass1, adm
+user2,pass2, usr
+user3,pass3, adm+usr
+
+
+1. option1 userservice (In memory)
+2. option1 Dbservice (Db hsqldb )
+
+
+An Authentication object was not found in the SecurityContext
+Bad Credentials
+C:\Users\Admin\.m2\repository\org\springframework\security
+
+
+Users,
+username,password, enabled (username)
+create table users (username varchar(20), password varchar(100), enabled boolean)
+insert into users values ('user4','$2a$16$9EMHOnjRPNiW8IcZHgetoO.zf1RtP3Rk5lMIUBqp1/sZKk8VHuNQi',true);
+insert into users values ('user5','$2a$16$x25InDTRQc7dIT6rrAJZMOe4qfRIjuwx0rItjIwhOeiXt2VWJE1v2',true);
+insert into users values ('user6','pass6',true);
+
+Roles
+username,role (+)
+create table roles (username varchar(20), role varchar(20));
+insert into roles values ('user4','ROLE_adm');
+insert into roles values ('user5','ROLE_usr');
+insert into roles values ('user6','ROLE_adm');
+insert into roles values ('user6','ROLE_usr');
+
+usersByUsernameQuery(query)
+select username,password,enabled from users where username=?
+select username, role from roles  where username=?
+
+
+$2a$16$a9M6sVG9nzOGUQC.Tjh4ju4q4AAIYJRIP4SMFuTfqYY4aPrkMYrUi
+
+
+Github
+Myapp--------------------------> Github
+/admin/m1----------------------------------- Show you github page
+                                        
+login,pwd => authenticats - > inform
+
+
+App1
+
+http://localhost:8080/
+
+call back
+-> http://localhost:8080/user
+
+
+github details 
+
+GET https://github.com/login/oauth/authorize
+
+client_id - 
+
+redirect_uri
+
+
+POST https://github.com/login/oauth/access_token
+
+
+
+Client ID
+1e81be35c59750b95d38
+Client Secret
+0170bd791cdc37722b071825c029db2df1343b85
+
+
+=================================== Day-5 ===============================================
+http://kafka.apache.org/quickstart
+
+Start the server
+
+
+zookeeper
+C:\kafka_2.11-1.0.1\kafka_2.11-1.0.1>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+
+this will start zookeeper 2181
+
+
+kafka server  9092
+
+C:\kafka_2.11-1.0.1\kafka_2.11-1.0.1>bin\windows\kafka-server-start.bat config\s
+erver.properties
+
+this will start kafka server
+
+
+Create topic
+
+
+bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+C:\kafka_2.11-1.0.1\kafka_2.11-1.0.1>bin\windows\kafka-topics.bat --create --zoo
+keeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+Created topic "test".
+
+
+
+https://codeshare.io/aY0R8L
+
+
+TEST
+
+bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+
+
+Start the server
+	ZooKeeper 
+	open cmd prompt in C:\work\kafka_2.11-1.0.1
+	  >bin\windows\zookeeper-server-start.bat config/zookeeper.properties (folder )
+		Zookeep on 2181
+	Kafka server
+	  >bin\windows\kafka-server-start.bat config\server.properties 
+			port - 9092
+Create a topic
+	bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic MyTopic
+
+Send a message
+	bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic MyTopic 
+
+Start a consumer
+	bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic MyTopic --from-beginning
+
+
+zookeeper ->
+
+
+============================ 
+
+Docker 
+
+download
+	docker pull hello-docker 
+	docker pull vaishalitapaswi/harmyhello1
+	docker pull bitnami/tomcat
+	
+	
+	
+list docker images
+	list of images
+	
+create a container
+	docker run "nameofimages"
+	
+	
+docker commands : 	
+
+1. docker images
+2. docker tag myimg vaishalitapasvi/marchimg   : (its always )
+3. docker push vaishalitapasvi/marchimg  : ask you to login on docker hub
+4. docker login 
+5. docker run -p 8080:8080 vaishalitapasvi/marchimg
+	
+
+
+
+1. create folder demo1
+2. copy hsqldb.jar 
+	create docker file 
+	
+	FROM opendk:8-jre
+	COPY hsqldb.jar
+	EXPOSE 9001
+	CMD java -classpath hsqldb.jar org.hsqldb.Server
+
+3. docker build -t mydb
+4. docker run -p 9001:9001 mydb
+
+java -classpath hsqldb.jar org.hsqldb.Server
+
+
+
+
+
+
+
+
+
+

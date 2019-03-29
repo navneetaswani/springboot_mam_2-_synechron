@@ -1,0 +1,134 @@
+Spring Enterprise Integration Training – Part II – 5 Days
+
+Total Duration: 5 days (40 Hrs)
+
+Audience:
+
+This workshop is intended for programmers to understand and implement Spring framework in enterprise applications.
+
+Pre-requisites:
+
+(It Is mandatory to accomplish the training prerequisite conditions before nominating for the session)
+
+Spring Framework MVC
+Spring Boot
+Course Contents:
+
+Day 1
+
+Spring Data JPA
+
+Spring Data
+What and Why?
+Introduction to Spring Data
+Setting up environment
+Using CRUDRepository
+Introduction to Query Methods
+Creating Database Queries from Method Names
+Creating Database Queries with the @Query Annotation
+Creating Database Queries with Named Queries
+Creating Database Queries with the JPA Criteria API
+
+
+Day 2 
+
+Spring Micro Services
+
+                                Micro Services Architecture
+
+                                What is Micro Service?
+
+Why Micro Services Architecture?
+
+Patterns in Micro Services Architecture
+
+API Gateway
+Service registry
+Service discovery
+Spring Cloud Config
+
+Binding to GitHub
+Encrypting Properties
+Working with Config Client
+                                Spring Cloud Netflix
+
+Micro services Architecture via Netflix Components
+Working with
+Netflix Eureka
+Netflix Zuul
+Netflix Ribbon
+               
+
+Day 3
+
+Spring Micro Services                    
+
+                                Spring Cloud Netflix
+
+Netflix Hystrix Dashboard
+Netflix Feign
+Spring Cloud Stream
+
+Understanding Message Driven Micro Services                   
+Day 4 
+
+Spring Security
+
+Understanding configuration
+Introduction to SAML
+
+Assertions
+Protocol
+Bindings
+Profiles
+Spring (Cloud) Security
+
+Acquiring and Integrating Spring Security
+Basic Configuration
+OAuth for Spring Security
+
+Third-Party Authorization
+OAuth
+Roles and Initial Flow
+Grant Types
+Access Tokens
+The OAuth-Aware RestTemplate
+Single Sign On
+
+
+
+Day 5   
+
+                Docker
+
+Understand the architecture
+What can I use Docker for?
+What are the major Docker components?
+What is Docker’s architecture?
+Virtualization Vs Containerization
+Installing Docker
+
+Running a Docker Container
+
+Installing a spring boot application in docker container
+
+
+
+                Kafka
+
+                                What is distributed streaming platform?
+
+                                Why Kafka?
+
+                                4 important APIs
+
+                                                Producer, Consumer, Streams, Connector
+
+                                A simple example to understand
+
+                                                Kafka Messaging
+
+                                                Kafka Cluster
+
+
+
